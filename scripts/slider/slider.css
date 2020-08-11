@@ -1,0 +1,104 @@
+/* = Общие стили HTM */
+
+
+		
+
+
+.s_box{
+	position:relative;
+}
+
+/* Задаем сброс обтекания */
+.clear {
+	margin-top: -1px;
+	height: 1px;
+	clear:both;
+	zoom: 1;
+}		
+/* Slider */
+.slider {
+	/* Ширина контейнера */
+	width: 900px;
+	/* Внешние тступы сверху и снизу */
+	margin: 0px auto;
+	/* Внутренние отступы для ссылок navy */
+	padding: 0 0px;
+	/* Позиционирование */
+	position: relative;
+	/* Скроем то что выходит за границы */
+	overflow: hidden;
+}
+/* Двойной клик по ссылкам вперед/назад вызывает выделение всех элементов слайдера,
+поэтому предотвращаем это */
+.slider::-moz-selection { background: transparent; color: #fff; text-shadow: none; }
+.slider::selection { background: transparent; color: #fff; text-shadow: none; }
+
+.slide-list {
+	position: relative;
+	margin: 0;
+	padding: 0;
+}
+.slide-wrap {
+	position: relative;
+	left: 0px;
+	top: 0;
+	/* максимально возможная ширина обертки слайдера */
+	width: 10000000px;
+}
+.slide-item {
+	/* Ширина слайда */
+	width: 280px;
+	/* Внутренние отступы */
+	padding: 10px;
+	/* Обтекание */
+	float: left;
+}
+.slide-title {
+	/* Шрифт */
+	font: bold 16px monospace;
+	/* Указываем, что элемент блочный */
+	display: block;
+}
+
+/* навигация вперед/назад */
+.navy {
+	/* абсолютное позиционирование */
+	position: absolute;
+	top: 50%;
+	z-index: 1;
+	height: 23px;
+	/* ширина ссылок */
+	width: 15px;
+	cursor: pointer;
+}
+.prev-slide {
+	left: 9%;
+	background-image:url(left.png);
+	background-repeat:no-repeat;
+	background-size:100%;
+}
+.next-slide {
+	right: 10%;
+	background-image:url(right.png);
+	background-repeat:no-repeat;
+	background-size:100%;
+}
+/*
+.navy.disable {
+	background: #dbdbdb;
+}
+*/
+
+/* навигация старт/пауза */
+.auto {
+	width: 7px;
+	height: 11px;
+	cursor: pointer;
+	margin: 10px auto;
+}
+.play {
+	background: url(bg/play.png) center no-repeat;
+}
+.pause {
+	background: url(bg/pause.png) center no-repeat;
+}

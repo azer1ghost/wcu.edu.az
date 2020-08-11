@@ -1,0 +1,21 @@
+@charset "utf-8";
+/* CSS Document */
+.name {
+  color: #46625c;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.name>p{
+    font-size: 11px;
+    line-height: 13px;
+}
+.name>strong{
+    display: block;
+    font-size: 28px;
+    line-height: 26px;
+    letter-spacing: -2px;
+}
+.name>span{
+    font-size: 17px;
+    line-height: 17px;
+}

@@ -1,0 +1,57 @@
+.quote {
+  background-color: #f8f8f8;
+  padding: 24px 32px;
+  font-family: Baskerville;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 32px;
+  width: calc(100% - 25px);
+  margin-bottom: 32px;
+}
+.quote div {
+  max-width: 90%;
+}
+.quote div h4 {
+  margin: 12px 0;
+}
+.quote.quote-small {
+  font-family: Baskerville;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  padding: 24px 32px;
+  width: calc(100% - -5px);
+}
+.excerption {
+  display: block;
+  font-family: Baskerville;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 30px;
+  text-align: center;
+  padding: 10px 20px;
+}
+.excerption:before {
+  content: "";
+  width: 100%;
+  display: block;
+  height: 25px;
+  background-image: url('../../../public/images/excerption-line.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-bottom: 20px;
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+.excerption:after {
+  content: "";
+  width: 100%;
+  display: block;
+  height: 25px;
+  background-image: url('../../../public/images/excerption-line.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-top: 20px;
+}

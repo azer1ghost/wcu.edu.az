@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>exclamation</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="9-scientific-bulletin" transform="translate(-371.000000, -650.000000)" stroke="#FFFFFF" fill-rule="nonzero" fill="#0F3681">
+            <g id="exclamation" transform="translate(372.000000, 651.000000)">
+                <path d="M24,0 C10.7340937,0 0,10.7350313 0,24 C0,37.2659063 10.7350313,48 24,48 C37.2659063,48 48,37.2649688 48,24 C48,10.7340937 37.2649688,0 24,0 Z M24,44.25 C12.8069063,44.25 3.75,35.1923437 3.75,24 C3.75,12.8069063 12.8076563,3.75 24,3.75 C35.1930938,3.75 44.25,12.8076563 44.25,24 C44.25,35.1930937 35.1923437,44.25 24,44.25 Z" id="Shape"></path>
+                <path d="M24,12.0822187 C22.9644375,12.0822187 22.125,12.9216562 22.125,13.9572187 L22.125,26.0315625 C22.125,27.067125 22.9644375,27.9065625 24,27.9065625 C25.0355625,27.9065625 25.875,27.067125 25.875,26.0315625 L25.875,13.9572187 C25.875,12.9216562 25.0355625,12.0822187 24,12.0822187 Z" id="Shape"></path>
+                <circle id="Oval" cx="24" cy="32.73375" r="2.53125"></circle>
+            </g>
+        </g>
+    </g>
+</svg>
