@@ -120,11 +120,10 @@
 
                     <?php if ($value['text']['slug'] != 'alumni') : ?>
 
-                        <li>
+                        <li id="link_<?= $value['text']['id'];?>">
                             <a href="javascript:void(0)" <?= ($value['text']['target'] == 1) ? ' target="_blank"' : '' ?>><?= Func::lang_uni(MF::$_lang, $value['text']['title']) ?></a>
                             <?php
-                            if (!empty($value['sub'])) {
-                            ?>
+                            if (!empty($value['sub'])) { ?>
 
                                 <div class="submenu-container" style="background-image: url('<?= ($value['text']['thumb']) ? UPLOAD_DIR_LINK . 'Image/pages/' . $value['text']['thumb'] : URL . 'public/images/faculty-3.png' ?>');">
                                     <div class="submenu__text">
@@ -134,27 +133,18 @@
                                     <div class="submenu__list">
                                         <ul>
                                             <?php
-                                            foreach ($value['sub'] as $v) {
-                                                $link = Func::create_link($v);
-                                            ?>
-
-                                                <li><a href="<?= $link ?>" <?= ($v['target'] == 1) ? ' target="_blank"' : '' ?>><?= $v['title'] ?></a></li><?php
-                                                                                                                                                        }
-                                                                                                                                                            ?>
-
+                                            foreach ($value['sub'] as $v) { $link = Func::create_link($v);?>
+                                                <li><a href="<?= $link ?>" <?= ($v['target'] == 1) ? ' target="_blank"' : '' ?>><?= $v['title'] ?></a></li>
+                                            <?php } ?>
                                         </ul>
 
                                     </div>
                                 </div>
-                            <?php
-                            }
-                            ?>
+                            <?php } ?>
 
                         </li>
                     <?php endif; ?>
-                <?php
-                }
-                ?>
+                <?php } ?>
 
             </ul>
         </div>
