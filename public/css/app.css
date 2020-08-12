@@ -641,13 +641,13 @@ body .main-header .main-header-menu ul li {
 }
 body .main-header .main-header-menu ul li a {
   transition: all 0.2s;
-  vertical-align: center;
-  padding: 0 10px;
+  /* vertical-align: center; */
+  padding: 0 7px;
   line-height: 32px;
   text-decoration: none;
   display: block;
   color: #2c2c2c;
-  font-weight: 800;
+  font-weight: 600;
   margin-bottom: 35px;
 }
 body .main-header .main-header-menu ul li a.active {
@@ -975,9 +975,9 @@ body .main-header .main-header-menu .mobile-from-tops ul li a:before {
 }
 body .main-header h1 {
   color: #fff;
-  font-size: 62px;
-  font-weight: 100;
-  line-height: 70px;
+  font-size: 50px;
+  font-weight: 150;
+  line-height: 50px;
   text-transform: uppercase;
   margin: 0 auto;
   max-width: 1160px;
@@ -1004,7 +1004,7 @@ body .main-header .main-undergraduate a {
   text-decoration: none;
 }
 body .main-header .main-undergraduate .main-undergrad-one {
-  max-width: 290px;
+  /* max-width: 290px; */
   display: inline-table;
   margin: 0 12px;
   font-family: "Baskerville";
@@ -1014,7 +1014,7 @@ body .main-header .main-undergraduate .main-undergrad-one:first-child {
 }
 body .main-header .main-undergraduate .main-undergrad-one img {
   max-width: 290px;
-  max-height: 200px;
+  /* max-height: 200px; */
 }
 body .main-header .main-undergraduate .main-undergrad-one span {
   text-transform: uppercase;

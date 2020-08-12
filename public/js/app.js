@@ -3,16 +3,28 @@ $(document).ready(function(){
     
     $("body .main-header .main-header-menu ul li").click(function(){
         $('.submenu-container').css("display", "none");
+        
     });
 
     $("body .main-header .main-header-menu ul li").click(function(){
+        
         $('> .submenu-container', this).css({
             'display': '-webkit-box',
             'display': '-ms-flexbox',
             'display': 'flex',
             'min-height': '275px',
-            'left': '0px'
-         });
+            'left': '0px',
+            "opacity": "0"
+         })
+
+         $('> .submenu-container', this).animate({
+            'left': '10px',
+            "opacity": "1"
+         },300, 'linear');
+
+
+
+         //$('.submenu-container').slideDown('slow');
     });
 
 });

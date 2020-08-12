@@ -15,7 +15,7 @@
 'All events'=>'Bütün tədbirlər', 
 'News'=>'Xəbərlər', 
 'Main'=>'Ana səhifə', 
-'The foundation of a successful career'=>'YAXŞI TƏHSİL &lt;br/&gt; &lt;span&gt; SƏNİN ÜSTÜNLÜYÜNDÜR&lt;/span&gt;', 
+'The foundation of a successful career'=>'YAXŞI TƏHSİL &lt;span&gt; SƏNİN ÜSTÜNLÜYÜNDÜR&lt;/span&gt;', 
 'LATEST NEWS'=>'SON XƏBƏRLƏR', 
 'UPCOMING EVENTS'=>'GƏLƏCƏK TƏDBİRLƏR', 
 'key_features_more'=>'1991-ci ildə əsası qoyulmuş Azərbaycanın ilk özəl ali təhsil müəssisələrindən biri olan Qərbi Kaspi Universiteti fəaliyyət göstərdiyi ötən illər ərzində ölkənin aparıcı ali təhsil &lt;br&gt; ocaqlarından birinə çevrilib.', 
