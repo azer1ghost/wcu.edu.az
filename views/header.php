@@ -245,7 +245,7 @@
                     <ul>
                         <li>
                             <a href="#" class="active">
-                                <span>PROSPECTIVE UNDERGRADUATE</span>
+                                <span>ABİTURİYENTLƏR</span>
                             </a>
                         </li>
                         <li>
