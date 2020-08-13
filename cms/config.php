@@ -6,7 +6,7 @@ define('API_TITLE', 'WCU.EDU.DEV CMS');
 define('URL', '/cms/');
 define('SITE_URL', 'http://wcu.dev.com/');
 define('LIBS', 'libs/');
-define('BASE_DIR', '/home2/wuitcenter/WCU.EDU.AZ/');
+define('BASE_DIR', '../');
 define('UPLOAD_DIR', BASE_DIR.'upload/');
 define('UPLOAD_DIR_LINK', '/upload/');
 
@@ -61,8 +61,8 @@ define('photo_feedback_height', '64');
 define('photo_mainfeatures_width', '48');
 define('photo_mainfeatures_height', '48');
 
-define('photo_mainbanner_width', '290');
-define('photo_mainbanner_height', '200');
+define('photo_mainbanner_width', '800');
+define('photo_mainbanner_height', '450');
 
 define('photo_chair_width', '260');
 define('photo_chair_height', '346');

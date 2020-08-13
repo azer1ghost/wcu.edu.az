@@ -155,7 +155,7 @@
         if (isset($this->menu) && ($this->menu == 'index')) {
         ?>
 
-            <h1><?= Lang::get('The foundation of a successful career') ?></h1>
+            <h1 style="text-align: center;"><?= Lang::get('The foundation of a successful career') ?></h1>
 
             <?php
             $x = 1;
@@ -169,8 +169,6 @@
                                 <div class="slide-list">
                                     <div class="slide-wrap">
                                   
-
-
                                     <?php
                                     foreach ($value['text'] as $k => $v) { 
                                         
@@ -181,9 +179,9 @@
                                             <div class="main-undergrad-one">
                                                 <a href="<?= $link ?>">
                                                     <div class="main-undergraduate-one__image">
-                                                        <img src="<?= UPLOAD_DIR_LINK ?>header/1.jpg" alt="<?= $v['title'] ?>">
+                                                        <img src="<?= UPLOAD_DIR_LINK ?>Image/mainbanner/<?= $v['photo'] ?>" alt="<?= $v['title'] ?>">
                                                     </div>
-                                                    <p><span><?= $v['title'] ?></span></p>
+                                                    <p><span style="text-align: center;"><?= $v['title'] ?></span></p>
                                                 </a>
                                             </div>
                                         </div>
@@ -197,8 +195,8 @@
                                 </div>
 
                             </div>
-                            <!-- <div class="navy prev-slide"></div>
-                            <div class="navy next-slide"></div> -->
+                            <div class="navy prev-slide"></div>
+                            <div class="navy next-slide"></div>
                         </div>
 
 
@@ -213,86 +211,25 @@
 
 
             <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-            <!-- <script src="scripts/slider/slider.js"></script> -->
+            <script src="scripts/slider/slider.js"></script>
 
-
-            <?php
-            $url = $_SERVER['REQUEST_URI'];
-            $lang = current(array_filter(explode("/", parse_url($url, PHP_URL_PATH))));
-            ?>
-            <!-- MOBILE SLIDER END -->
-            <?php if ($lang == "az" or $lang == "") { ?>
-                <div class="right-side-links">
-                    <ul>
-                        <li>
-                            <a href="https://www.wcu.edu.az/az/undergraduate">
-                                <span>BAKALAVR PROQRAMLARI</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.wcu.edu.az/az/masterdegree">
-                                <span>MAGİSTR PROQRAMLARI</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.wcu.edu.az/az/pages/view/doktorantura-proqrami-uzre-ixtisaslar">
-                                <span>DOKTORANTURA PROQRAMLARI</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="left-side-links">
-                    <ul>
-                        <li>
-                            <a href="#" class="active">
-                                <span>ABİTURİYENTLƏR</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="active">
-                                <span>TƏLƏBƏLƏR</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-
-            <?php }
-            if ($lang == "en") { ?>
-                <div class="right-side-links">
-                    <ul>
-                        <li>
-                            <a href="https://www.wcu.edu.az/en/undergraduate">
-                                <span>BACHELOR DEGREE PROGRAM</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.wcu.edu.az/en/masterdegree">
-                                <span>MASTER’S DEGREE PROGRAM</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.wcu.edu.az/en/pages/view/doktorantura-proqrami-uzre-ixtisaslar">
-                                <span>PhD Degree</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="left-side-links">
-                    <ul>
-                        <li>
-                            <a href="#" class="active">
-                                <span>PROSPECTIVE UNDERGRADUATE</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="active">
-                                <span>CURRENT STUDENT</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            <?php } ?>
+            
+            <div class="right-side-links">
+                <ul>
+                    <?php foreach ($this->listMainBanner as $key=>$value){ ?>
+                        <li><a href="<?= $value['category']['link']?>"><span><?= $value['category']['title']?></span></a></li>
+                    <?php } ?>
+                </ul>
+            </div>
+            
+            <div class="left-side-links">
+                <ul>
+                    <?php $x=1; foreach ($this->listMainBannerleft as $key=>$value){ ?>
+                        <li><a href="<?= $value['category']['link']?>" class="active"><span><?= $value['category']['title']?></span></a></li>
+                    <?php $x++; } ?>
+                </ul>
+            </div>
+ 
 
     </div>
 <?php

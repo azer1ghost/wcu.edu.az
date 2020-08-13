@@ -16,6 +16,7 @@ class Index extends Controller {
     function index() {
         $this->view->menu = $this->_menu;
         $this->view->listMainBanner = $this->model->listMainBanner();
+        $this->view->listMainBannerleft = $this->model->listMainBannerleft();
         $this->view->listPost = $this->model->listPost();
         $this->view->listFeatures = $this->model->listFeatures();
 
