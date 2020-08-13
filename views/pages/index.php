@@ -10,7 +10,9 @@
         if(!empty($this->page['photo'])){
             ?>
             <!-- third-fixed -->
-            <img class="page-img" src="<?=UPLOAD_DIR_LINK?>Image/pages/<?=$this->page['photo']?>" alt="">
+            <div class="gallery">
+                <a href="<?=UPLOAD_DIR_LINK?>Image/pages/<?=$this->page['photo']?>"><img class="page-img" src="<?=UPLOAD_DIR_LINK?>Image/pages/<?=$this->page['photo']?>" alt=""></a>
+            </div>
             <?php
         }
         ?>

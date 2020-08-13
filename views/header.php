@@ -12,10 +12,10 @@
     <meta name="author" content="MF">
     <link rel="icon" type="image/png" href="/public/images/favicon.png" />
 
-
     <link rel="stylesheet" type="text/css" href="scripts/slider/slider.css" media="all">
     <link rel="stylesheet" type="text/css" href="<?= URL ?>scripts/css/my_style.css">
-
+    <link rel="stylesheet" href="<?= URL ?>scripts/lightbox/simple-lightbox.min.css">
+    
     <?php
     if (isset($this->css)) {
         foreach ($this->css as $css) {

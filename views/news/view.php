@@ -8,7 +8,12 @@
 
         <?php
         if(!empty($this->viewPost['photo'][0])){
-            ?><img class="page-img third-fixed" src="<?=UPLOAD_DIR_LINK?>Image/post/<?=$this->viewPost['photo'][0]['photo']?>" alt=""><?php
+            ?>
+              <div class="gallery">
+                <a href="<?=UPLOAD_DIR_LINK?>Image/post/<?=$this->viewPost['photo'][0]['photo']?>"><img class="page-img third-fixed" src="<?=UPLOAD_DIR_LINK?>Image/post/<?=$this->viewPost['photo'][0]['photo']?>" alt=""></a>
+              </div>
+            
+            <?php
         }
         ?>
 

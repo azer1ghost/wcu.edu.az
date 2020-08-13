@@ -120,6 +120,9 @@ $(function(){
 
   gtag('config', 'UA-112469949-1');
 </script>
-
+<script src="<?= URL ?>scripts/lightbox/simple-lightbox.min.js"></script>   
+    <script>
+        var lightbox = new SimpleLightbox('.gallery a', { /* options */ });
+    </script>
 </body>
 </html>
