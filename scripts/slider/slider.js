@@ -1,87 +1,95 @@
-jQuery(document).ready(function(){
-	function htmSlider(){
-		/* Зададим следующие переменные */
+function dxSimpleSlider(element = '#dx-slider', auto = false, pause) {
 
-		/* обертка слайдера */
-		var slideWrap = jQuery('.slide-wrap');
-		/* ссылки на предудыщий иследующий слайд */
-		var nextLink = jQuery('.next-slide');
-		var prevLink = jQuery('.prev-slide');
+    // Get parent element
+    var $this = $(element);
 
-		var playLink = jQuery('.auto');
-		
-		var is_animate = false;
-		
-		/* ширина слайда с отступами */
-		var slideWidth = jQuery('.slide-item').outerWidth();
-		
-		/* смещение слайдера */
-		var newLeftPos = slideWrap.position().left - slideWidth;
-		
-		playLink.removeClass('play').addClass('pause');
-		jQuery('.navy').addClass('disable');
-		timer = setInterval(autoplay, 5000);
-		
-		/* Клик по ссылке на следующий слайд */
-		nextLink.click(function(){
-			if(!slideWrap.is(':animated')) {
-	
-				slideWrap.animate({left: newLeftPos}, 500, function(){
-					slideWrap
-						.find('.slide-item:first')
-						.appendTo(slideWrap)
-						.parent()
-						.css({'left': 0});
-				});
+    // Slides container
+    var slidesCont = $this.children('.slide-wrap');
+    // Get all slides
+    var slides = slidesCont.children('.slide-item');
 
-			}
-		});
+    // Get pager div
+    // var pager = $this.children('.pager');
 
-		/* Клик по ссылке на предыдующий слайд */
-		prevLink.click(function(){
-			if(!slideWrap.is(':animated')) {
-			
-				slideWrap
-					.css({'left': newLeftPos})
-					.find('.slide-item:last')
-					.prependTo(slideWrap)
-					.parent()
-					.animate({left: 0}, 500);
+    // Get Previous / Next links
+   // var arrowsCont = $this.children('.arrows');
+    var prevSlide = $('.prev-slide');
+    var nextSlide = $('.next-slide');
 
-			}
-		});
-		
-		
-		/* Функция автоматической прокрутки слайдера */
-		function autoplay(){
-			if(!is_animate){
-				is_animate = true;
-				slideWrap.animate({left: newLeftPos}, 500, function(){
-					slideWrap
-						.find('.slide-item:first')
-						.appendTo(slideWrap)
-						.parent()
-						.css({'left': 0});
-					is_animate = false;
-				});
-			}
-		}
-		
-		/* Клики по ссылкам старт/пауза */
-		playLink.click(function(){
-			if(playLink.hasClass('play')){
-				playLink.removeClass('play').addClass('pause');
-				jQuery('.navy').addClass('disable');
-				timer = setInterval(autoplay, 3000);
-			} else {
-				playLink.removeClass('pause').addClass('play');
-				jQuery('.navy').removeClass('disable');
-				clearInterval(timer);
-			}
-		});
+    // Total slides count
+    var slidesCount = slides.length;
 
-	}
+    // Set currentSlide to first child
+    var currentSlide = slides.first();
+    var currentSlideIndex = 1;
 
-	/* иницилизируем функцию слайдера */
-	htmSlider();
+    var autoPlay = null;
+
+    // Hide all slides except first and add active class to first
+    slides.not(':first').css('display', 'none');
+    currentSlide.addClass('active');
+
+    // Function responsible for fading to next slide
+    function fadeNext() {
+        currentSlide.removeClass('active').fadeOut(700);
+
+        if(currentSlideIndex == slidesCount) {
+            currentSlide = slides.first();
+            currentSlide.delay(500).addClass('active').fadeIn(700);
+            currentSlideIndex = 1;
+        } else {
+            currentSlideIndex++;
+            currentSlide = currentSlide.next();
+            currentSlide.delay(500).addClass('active').fadeIn(700);
+        }
+
+       // pager.text(currentSlideIndex+' / '+slidesCount);
+    }
+
+    // Function responsible for fading to previous slide
+    function fadePrev() {
+        currentSlide.removeClass('active').fadeOut(700);
+
+        if(currentSlideIndex == 1) {
+            currentSlide = slides.last();
+            currentSlide.delay(500).addClass('active').fadeIn();
+            currentSlideIndex = slidesCount;
+        } else {
+            currentSlideIndex--;
+            currentSlide = currentSlide.prev();
+            currentSlide.delay(500).addClass('active').fadeIn(700);
+        }
+
+       // pager.text(currentSlideIndex+' / '+slidesCount);
+    }
+
+    // Function that starts the autoplay and resets it in case user navigated (clicked prev or next)
+    function AutoPlay() {
+        clearInterval(autoPlay);
+
+        if(auto == true)
+            autoPlay = setInterval(function() {fadeNext()}, pause);
+    }
+
+    // Detect if user clicked on arrow for next slide and fade next slide if it did
+    $(nextSlide).click(function(e) {
+        e.preventDefault();
+        fadeNext();
+        AutoPlay();
+    });
+
+    // Detect if user clicked on arrow for previous slide and fade previous slide if it did
+    $(prevSlide).click(function(e) {
+        e.preventDefault();
+        fadePrev();
+        AutoPlay();
+    });
+
+    // Start autoplay if auto is set to true
+    AutoPlay();
+
+}
+
+$(function() {
+    dxSimpleSlider('#slider', true, 5000);
 });

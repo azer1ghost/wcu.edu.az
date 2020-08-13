@@ -15,7 +15,7 @@
     <link rel="stylesheet" type="text/css" href="scripts/slider/slider.css" media="all">
     <link rel="stylesheet" type="text/css" href="<?= URL ?>scripts/css/my_style.css">
     <link rel="stylesheet" href="<?= URL ?>scripts/lightbox/simple-lightbox.min.css">
-    
+
     <?php
     if (isset($this->css)) {
         foreach ($this->css as $css) {
@@ -120,7 +120,7 @@
 
                     <?php if ($value['text']['slug'] != 'alumni') : ?>
 
-                        <li id="link_<?= $value['text']['id'];?>">
+                        <li id="link_<?= $value['text']['id']; ?>">
                             <a href="javascript:void(0)" <?= ($value['text']['target'] == 1) ? ' target="_blank"' : '' ?>><?= Func::lang_uni(MF::$_lang, $value['text']['title']) ?></a>
                             <?php
                             if (!empty($value['sub'])) { ?>
@@ -133,7 +133,8 @@
                                     <div class="submenu__list">
                                         <ul>
                                             <?php
-                                            foreach ($value['sub'] as $v) { $link = Func::create_link($v);?>
+                                            foreach ($value['sub'] as $v) {
+                                                $link = Func::create_link($v); ?>
                                                 <li><a href="<?= $link ?>" <?= ($v['target'] == 1) ? ' target="_blank"' : '' ?>><?= $v['title'] ?></a></li>
                                             <?php } ?>
                                         </ul>
@@ -163,73 +164,74 @@
             ?>
                 <div class="main-undergraduate  main-header-tabs<?= ($x == 1) ? ' active' : '' ?>">
 
-                   
-                        <div class="s_box">
-                            <div class="slider">
-                                <div class="slide-list">
-                                    <div class="slide-wrap">
-                                  
-                                    <?php
-                                    foreach ($value['text'] as $k => $v) { 
-                                        
-                                        $link = ($v['link']) ? $v['link'] : 'javascript:';
-                                    ?>
 
+                    <div class="s_box">
+                        <div class="slider">
+                            <div id="slider" class="slide-list">
+                                <div class="slide-wrap">
+
+                                    <?php
+                                    foreach ($value['text'] as $k => $v) {
+                                        $link = ($v['link']) ? $v['link'] : 'javascript:'; ?>
+                                
                                         <div class="slide-item">
                                             <div class="main-undergrad-one">
                                                 <a href="<?= $link ?>">
                                                     <div class="main-undergraduate-one__image">
-                                                        <img src="<?= UPLOAD_DIR_LINK ?>Image/mainbanner/<?= $v['photo'] ?>" alt="<?= $v['title'] ?>">
+                                                        <img class="slider-image" src="<?= UPLOAD_DIR_LINK ?>Image/mainbanner/<?= $v['photo'] ?>" alt="<?= $v['title'] ?>">
                                                     </div>
                                                     <p><span style="text-align: center;"><?= $v['title'] ?></span></p>
                                                 </a>
                                             </div>
                                         </div>
-
+                                        
                                     <?php } ?>
-
-                               
-
-                                    </div>
 
                                 </div>
 
                             </div>
+
+                        </div>
+                        <div class="arrows">
                             <div class="navy prev-slide"></div>
                             <div class="navy next-slide"></div>
                         </div>
+                    </div>
 
 
-              
+
 
                     <p>
                         <!--a class="main-undergraduate-link" href="#">About undergraduate</a-->
                     </p>
                 </div>
-            <?php $x++; }  ?>
+            <?php $x++;
+            }  ?>
 
 
 
-            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+            <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
             <script src="scripts/slider/slider.js"></script>
 
-            
+
             <div class="right-side-links">
                 <ul>
-                    <?php foreach ($this->listMainBanner as $key=>$value){ ?>
-                        <li><a href="<?= $value['category']['link']?>"><span><?= $value['category']['title']?></span></a></li>
+                    <?php foreach ($this->listMainBanner as $key => $value) { ?>
+                        <li><a href="<?= $value['category']['link'] ?>"><span><?= $value['category']['title'] ?></span></a></li>
                     <?php } ?>
                 </ul>
             </div>
-            
+
             <div class="left-side-links">
                 <ul>
-                    <?php $x=1; foreach ($this->listMainBannerleft as $key=>$value){ ?>
-                        <li><a href="<?= $value['category']['link']?>" class="active"><span><?= $value['category']['title']?></span></a></li>
-                    <?php $x++; } ?>
+                    <?php $x = 1;
+                    foreach ($this->listMainBannerleft as $key => $value) { ?>
+                        <li><a href="<?= $value['category']['link'] ?>" class="active"><span><?= $value['category']['title'] ?></span></a></li>
+                    <?php $x++;
+                    } ?>
                 </ul>
             </div>
- 
+
 
     </div>
 <?php
