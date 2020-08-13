@@ -12,7 +12,7 @@
 'All events'=>'All events', 
 'News'=>'News', 
 'Main'=>'Main', 
-'The foundation of a successful career'=>'GOOD EDUCATION&lt;br /&gt; TO &lt;span&gt; GROW YOUR MIND&lt;/span&gt;', 
+'The foundation of a successful career'=>'GOOD YOUR MIND WITH &lt;span&gt; WCU &lt;/span&gt;', 
 'LATEST NEWS'=>'LATEST NEWS', 
 'UPCOMING EVENTS'=>'UPCOMING EVENTS', 
 'key_features_more'=>'Western University is one of the first private universities in Baku, Azerbaijan Republic. Founded in 1991, it has become one of the leading universities in the country.', 

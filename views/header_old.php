@@ -120,10 +120,11 @@
 
                     <?php if ($value['text']['slug'] != 'alumni') : ?>
 
-                        <li id="link_<?= $value['text']['id'];?>">
+                        <li>
                             <a href="javascript:void(0)" <?= ($value['text']['target'] == 1) ? ' target="_blank"' : '' ?>><?= Func::lang_uni(MF::$_lang, $value['text']['title']) ?></a>
                             <?php
-                            if (!empty($value['sub'])) { ?>
+                            if (!empty($value['sub'])) {
+                            ?>
 
                                 <div class="submenu-container" style="background-image: url('<?= ($value['text']['thumb']) ? UPLOAD_DIR_LINK . 'Image/pages/' . $value['text']['thumb'] : URL . 'public/images/faculty-3.png' ?>');">
                                     <div class="submenu__text">
@@ -133,28 +134,42 @@
                                     <div class="submenu__list">
                                         <ul>
                                             <?php
-                                            foreach ($value['sub'] as $v) { $link = Func::create_link($v);?>
-                                                <li><a href="<?= $link ?>" <?= ($v['target'] == 1) ? ' target="_blank"' : '' ?>><?= $v['title'] ?></a></li>
-                                            <?php } ?>
+                                            foreach ($value['sub'] as $v) {
+                                                $link = Func::create_link($v);
+                                            ?>
+
+                                                <li><a href="<?= $link ?>" <?= ($v['target'] == 1) ? ' target="_blank"' : '' ?>><?= $v['title'] ?></a></li><?php
+                                                                                                                                                        }
+                                                                                                                                                            ?>
+
                                         </ul>
 
                                     </div>
                                 </div>
-                            <?php } ?>
+                            <?php
+                            }
+                            ?>
 
                         </li>
                     <?php endif; ?>
-                <?php } ?>
+                <?php
+                }
+                ?>
 
             </ul>
         </div>
 
 
 
+
+
+
+
+
+
         <?php
         if (isset($this->menu) && ($this->menu == 'index')) {
         ?>
-
             <h1><?= Lang::get('The foundation of a successful career') ?></h1>
 
             <?php
@@ -163,69 +178,147 @@
             ?>
                 <div class="main-undergraduate  main-header-tabs<?= ($x == 1) ? ' active' : '' ?>">
 
-                   
+                    <?php if ($x == 1) : ?>
                         <div class="s_box">
                             <div class="slider">
                                 <div class="slide-list">
                                     <div class="slide-wrap">
-                                  
+                                    <?php endif; ?>
 
 
                                     <?php
-                                    foreach ($value['text'] as $k => $v) { 
-                                        
+                                    foreach ($value['text'] as $k => $v) {
                                         $link = ($v['link']) ? $v['link'] : 'javascript:';
                                     ?>
 
-                                        <div class="slide-item">
+                                        <?php if ($x == 1) : ?>
+                                            <div class="slide-item">
+                                            <?php endif; ?>
                                             <div class="main-undergrad-one">
                                                 <a href="<?= $link ?>">
                                                     <div class="main-undergraduate-one__image">
-                                                        <img src="<?= UPLOAD_DIR_LINK ?>header/1.jpg" alt="<?= $v['title'] ?>">
+                                                        <img src="<?= UPLOAD_DIR_LINK ?>Image/mainbanner/<?= $v['photo'] ?>" alt="<?= $v['title'] ?>">
                                                     </div>
                                                     <p><span><?= $v['title'] ?></span></p>
+                                                    <?php
+                                                    if ($v['subtitle'] == '2019 / 2020 tədris ili üçün') {
+                                                        $v['subtitle'] = '2020 / 2021 tədris ili üçün';
+                                                    }
+                                                    if ($v['subtitle'] == '2019/ 2020 tədris ili üçün') {
+                                                        $v['subtitle'] = '2020 / 2021 tədris ili üçün';
+                                                    }
+                                                    if ($v['subtitle'] == '2018 / 2019 tədris ili üçün') {
+                                                        $v['subtitle'] = '2020 / 2021 tədris ili üçün';
+                                                    }
+                                                    if ($v['subtitle'] == 'For the 2019/2020 academic years') {
+                                                        $v['subtitle'] = 'For the 2020/2021 academic years';
+                                                    }
+                                                    if ($v['subtitle'] == 'Academic year of 2018/2019') {
+                                                        $v['subtitle'] = 'Academic year of 2020/2021';
+                                                    }
+                                                    ?>
+                                                    <p><?= $v['subtitle'] ?></p>
+                                                </a>
+                                            </div>
+
+                                            <?php if ($x == 1) : ?>
+                                            </div>
+                                        <?php endif; ?>
+
+
+                                    <?php
+                                    }
+                                    ?>
+
+                                    <?php // butun bele yazilarin icerisinde olan if($x == 1) elave script uchundur, statik qoshulub 
+                                    ?>
+                                    <?php if ($x == 1) : ?>
+                                        <?php
+                                        if ($_SERVER['REQUEST_URI'] == '/en') {
+                                            $sl_title1 = 'Our Universitiy\'s profile at "THE" World University rankings';
+                                            $sl_title2 = 'Our Universitiy\'s profile at "QS" World University rankings';
+                                            $sl_title3 = 'WCU Elsevier Scopus profile';
+                                        } else {
+                                            $sl_title1 = '"THE" DÜNYA REYTİNQ TƏŞKİLATI SAYTINDA UNİVERSİTETİMİZİN PROFİLİ';
+                                            $sl_title2 = '"QS" DÜNYA REYTİNQ TƏŞKİLATI SAYTINDA UNİVERSİTETİMİZİN PROFİLİ';
+                                            $sl_title3 = 'WCU ELSEVİER SCOPUS HESABI';
+                                        }
+                                        ?>
+
+                                        <div class="slide-item">
+                                            <div class="main-undergrad-one">
+                                                <a href="https://www.timeshighereducation.com/world-university-rankings/western-caspian-university?fbclid=IwAR0nugr6voQ4OG3E3bFl2OzcOZQ48TS7BT1d1ZwygzRThzclgWzhbaFdviY" target="_blank">
+                                                    <div class="main-undergraduate-one__image">
+                                                        <img src="/scripts/time.png" alt="<?= $sl_title1 ?>">
+                                                    </div>
+                                                    <p><span><?= $sl_title1 ?></span></p>
+                                                    <p></p>
                                                 </a>
                                             </div>
                                         </div>
 
-                                    <?php } ?>
+                                        <div class="slide-item">
+                                            <div class="main-undergrad-one">
+                                                <a href="https://www.topuniversities.com/universities/western-caspian-university" target="_blank">
+                                                    <div class="main-undergraduate-one__image">
+                                                        <img src="/scripts/top_univers.jpg" alt="<?= $sl_title2 ?>">
+                                                    </div>
+                                                    <p><span><?= $sl_title2 ?></span></p>
+                                                    <p></p>
+                                                </a>
+                                            </div>
+                                        </div>
 
-                               
+
+                                        <div class="slide-item">
+                                            <div class="main-undergrad-one">
+                                                <a href="https://www.scopus.com" target="_blank">
+                                                    <div class="main-undergraduate-one__image">
+                                                        <img src="/scripts/sc.jpg" alt="<?= $sl_title3 ?>">
+                                                    </div>
+                                                    <p><span><?= $sl_title3 ?></span></p>
+                                                    <p></p>
+                                                </a>
+                                            </div>
+                                        </div>
 
                                     </div>
 
                                 </div>
 
                             </div>
-                            <!-- <div class="navy prev-slide"></div>
-                            <div class="navy next-slide"></div> -->
+                            <div class="navy prev-slide"></div>
+                            <div class="navy next-slide"></div>
                         </div>
 
 
-              
+                    <?php endif; ?>
 
                     <p>
                         <!--a class="main-undergraduate-link" href="#">About undergraduate</a-->
                     </p>
                 </div>
-            <?php $x++; }  ?>
+            <?php
+                $x++;
+            }
+            ?>
 
 
 
             <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-            <!-- <script src="scripts/slider/slider.js"></script> -->
+            <script src="scripts/slider/slider.js"></script>
 
 
             <?php
-            $url = $_SERVER['REQUEST_URI'];
-            $lang = current(array_filter(explode("/", parse_url($url, PHP_URL_PATH))));
+                $url = $_SERVER['REQUEST_URI'];
+                $lang = current(array_filter(explode("/", parse_url($url, PHP_URL_PATH))));
             ?>
             <!-- MOBILE SLIDER END -->
             <?php if ($lang == "az" or $lang == "") { ?>
                 <div class="right-side-links">
                     <ul>
                         <li>
-                            <a href="https://www.wcu.edu.az/az/undergraduate">
+                            <a href="https://www.wcu.edu.az/az/undergraduate" >
                                 <span>BAKALAVR PROQRAMLARI</span>
                             </a>
                         </li>
@@ -245,11 +338,11 @@
                     <ul>
                         <li>
                             <a href="#" class="active">
-                                <span>ABİTURİYENTLƏR</span>
+                                <span>PROSPECTIVE UNDERGRADUATE</span>
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="active">
+                            <a href="#"  class="active">
                                 <span>TƏLƏBƏLƏR</span>
                             </a>
                         </li>
@@ -261,7 +354,7 @@
                 <div class="right-side-links">
                     <ul>
                         <li>
-                            <a href="https://www.wcu.edu.az/en/undergraduate">
+                            <a href="https://www.wcu.edu.az/en/undergraduate" >
                                 <span>BACHELOR DEGREE PROGRAM</span>
                             </a>
                         </li>
@@ -286,7 +379,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="active">
+                            <a href="#"  class="active">
                                 <span>CURRENT STUDENT</span>
                             </a>
                         </li>
