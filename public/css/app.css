@@ -1265,6 +1265,8 @@ body .player-widget {
   background-color: #fff;
   margin-top: 30px;
   position: relative;
+  margin-left: auto;
+  margin-right: auto;
 }
 @media only screen and (max-width: 1190px) {
   body .player-widget {
@@ -1371,6 +1373,8 @@ body .news-widget {
   position: relative;
   display: block;
   overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
 }
 @media only screen and (max-width: 1190px) {
   body .news-widget {
